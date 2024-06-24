@@ -8,3 +8,8 @@
 """
 
 numbers = [20, 10, -4, 5, 15, 36, -16]
+print(max(numbers))
+numbers = list(set(numbers))
+numbers.sort(reverse=True)
+print(numbers)
+print(numbers[1])

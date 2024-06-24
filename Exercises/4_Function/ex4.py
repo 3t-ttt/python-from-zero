@@ -11,11 +11,20 @@
     Hàm trả về danh sách các phần tử nằm ở cả 2 List
     Gợi ý: Sử dụng hàm is_member()
 """
-
-
+#A
 def is_member(value, list_of_values):
-    pass
+    for item in list_of_values:
+        if item == value:
+            return True
+    return False
 
+#B
+def overlapping(list_1, list_2):
+    overlapping_list = []
+    for item in list_1:
+        if is_member(item, list_2) is True:
+            overlapping_list.append(item)
+    return overlapping_list
 
 print(is_member("monday", ["rose", 5, True, "monday", "tuesday", -5.5]))
-print(is_member("Monday", ["rose", 5, True, "monday", "tuesday", -5.5]))
+print(overlapping(["rose", 5, True, "monday"], ["rose", 5, False, "monday", "tuesday", -5.5]))

@@ -4,7 +4,7 @@
     cộng không thực hiện được thì trả về giá trị 0
     Ví dụ:
     Input:
-        mat1 = [
+    mat1 = [
         [1, 2, 3],
         [4, 5, 6],
         [7, 8, 9],
@@ -19,6 +19,27 @@
 
 """
 
-
 def add_matrices(mat1, mat2):
-    pass
+    if len(mat1) != len(mat2) or len(mat1[0]) != len(mat2[0]):
+        return 0
+    result = []
+    for i in range(len(mat1)):         # Loop through each row
+        temp = []
+        for j in range(len(mat1[0])):  # Loop through each column in the row
+            temp.append(mat1[i][j] + mat2[i][j])
+        print(temp)
+        result.append(temp)
+    return result
+
+mat1 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+]
+mat2 = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1],
+]
+
+print(add_matrices(mat1, mat2))

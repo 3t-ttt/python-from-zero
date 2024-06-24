@@ -8,4 +8,18 @@
 
 
 def get_string(n):
-    pass
+    factors = []
+    # start from min prime number
+    divisor = 2
+
+    while n > 1:
+        while n % divisor == 0:
+            factors.append(divisor)
+            n //= divisor
+        divisor += 1
+
+    factors_str = ' x '.join(map(str, factors))
+    print(f"{original_n} = {factors_str}")
+
+original_n = int(input("Please enter a natural number: "))
+get_string(original_n)

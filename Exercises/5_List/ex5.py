@@ -14,7 +14,33 @@
     6^2 + 8^2 = 100
     1^2 + 0^2 + 0^2 = 1 (End)
 
-    Some happy numbers are: 1, 6, 36, 44, 49, 79, 100, 160, 170, 216, 224, 229, 254,
-    264, 275, 285, 289, 294, 335, 347, 355, 357, 388, 405
+    Some happy numbers are: 1, 7, 13, 19, 23, 28, 44, 49, 68, 79, 129, 133, 139, 167, 188, 226, 236, 239, 338, 
+    356, 367, 368, 379, 446, 469, 478, 556, 566, 888, 899
 """
-n = input("Enter a number: ")
+
+def is_happy_number(n):
+    # Function to calculate the sum of squares of digits of a number
+    def sum_of_squares(num):
+        return sum(int(digit) ** 2 for digit in str(num))
+
+    # Initialize an empty set to keep track of seen numbers
+    seen_numbers = set()
+
+    original_number = n  # Store the original number for the final output message
+
+    while n != 1 and n not in seen_numbers:
+        # Add the current number to the set of seen numbers
+        seen_numbers.add(n)
+        # Update n to be the sum of the squares of its digits
+        n = sum_of_squares(n)
+
+    # Check the final value of n to determine if it's a happy number
+    if n == 1:
+        return f"{original_number} is a happy number"
+    else:
+        return f"{original_number} is an unhappy number"
+
+# Example usage
+user_input = int(input("Please enter a positive integer: "))
+print(is_happy_number(user_input))
+
