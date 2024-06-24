@@ -10,11 +10,16 @@
     "a gentleman" = "elegant man"
     "silent" = "listen"
 """
-
 def are_anagrams(str1, str2):
     # Remove spaces and convert to lowercase for case-insensitive comparison
     str1 = str1.replace(" ", "").lower()
     str2 = str2.replace(" ", "").lower()
 
     # Check if the sorted characters of both strings are the same
+    print(sorted(str1))
+    print(sorted(str2))
     return sorted(str1) == sorted(str2)
+
+str1 = "New York Timess"
+str2 = "monkeys write"
+print(are_anagrams(str1, str2))

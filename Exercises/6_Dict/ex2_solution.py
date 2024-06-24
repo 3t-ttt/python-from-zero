@@ -6,6 +6,6 @@
 
 n = int(input("Enter a number: "))
 result = {}
-for i in range(n+1):
-    result[i] = i**2
+for key in range(n+1):
+    result[key] = key**2
 print(result)

@@ -8,7 +8,21 @@
 
 
 def get_frequences(string):
-    pass
+    if not string:
+        return []
 
+    result = []
+    count = 1
 
-text = "aabbbaccba"
+    for i in range(1, len(string)):
+        if string[i] == string[i-1]:
+            count += 1
+        else:
+            result.append(count)
+            count = 1
+
+    result.append(count)
+    return result
+
+text = "aabbbbbsssaaa"
+print(get_frequences(text))
